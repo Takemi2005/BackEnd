@@ -40,3 +40,11 @@ $exerc3 = "O PHP fo1 criado em mil novecentos e noventa e cinco";
 echo "\nAntes do comando replace: \n", $exerc3; 
 $exerc3 = str_replace(['o', 'a', 'i'], ['0','4','1'], $exerc3);
 echo "\nApos o comando replace: \n", $exerc3;
+
+
+$exerc2= "Programação em php";
+echo  "\nMinusculo:", $exerc2;
+$exerc2= strtoupper($exerc2);
+echo "\nMaiusculo:", $exerc2;   
+$exerc2= strtoupper($exerc2);
+echo "\nMinusculo novamente:", $exerc2;
