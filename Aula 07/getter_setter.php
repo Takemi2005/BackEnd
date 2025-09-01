@@ -53,9 +53,11 @@ public function setIdade($idade) {//Seter idade
     }
 
     public function exibirinfo() {
-        return " Nome do aluno:". $this->nome."\n CPF:"$this->cpf.
-        "\n Telefone:". $this->telefone()\n Idade: $this->getIdade()
-        \n Email:
+        return "Nome do aluno: " . $this->getNome() .
+            "\nCPF: " . $this->getCpf() .
+            "\nTelefone: " . $this->getTelefone() .
+            "\nIdade: " . $this->getIdade() .
+            "\nEmail: " . $this->email;
     }
 
 }
