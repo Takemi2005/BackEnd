@@ -17,7 +17,7 @@ class Quadrado implements Forma {
         return $this->lado * $this->lado;
     }
 
-
+}
 class Retangulo implements Forma {
     private $base;
     private $altura;
