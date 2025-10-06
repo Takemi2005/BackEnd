@@ -1,11 +1,14 @@
-<!--Cenário 4 – Ciclo da Vida
-
+<!-- Cenário 4 – Ciclo da Vida.
 Na Terra, pessoas podem engravidar, nascer, crescer, fazer escolhas e até doar
-sangue para ajudar outras.-->
+sangue para ajudar outras.
+
+
+Agregação -->
 
 
 <?php 
     class Vida  {
+
         public function engravidar(){
             echo "Engravidou\n";
         }
