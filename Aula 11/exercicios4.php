@@ -3,7 +3,7 @@ Na Terra, pessoas podem engravidar, nascer, crescer, fazer escolhas e até doar
 sangue para ajudar outras.
 
 
-Agregação -->
+Composição -->
 
 
 <?php 
