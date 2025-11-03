@@ -1,0 +1,11 @@
+<?PHP 
+// O modelo MUC para criacao de sistemas
+// o que é o padrão MVC?
+
+// Este padrão é utilizado para o desenvolvimento limpo e organizado de aplicaçoes 
+
+// M-> Model: Representa os dados e as regras de negocio (ex: Aluno.php(CRUD) e AlunoDAO.php) 
+
+// V-> View: Cuida da parte gr´´afica e da interface com usuario , ou seja o que aparece na tela (ex: index.html e index.php)
+
+// C-> Controller: É o intermediario  entre  a interface e os dados e regras de negocio (ex: AlunoController.php)
