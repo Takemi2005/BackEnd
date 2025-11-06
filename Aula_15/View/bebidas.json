@@ -1,0 +1,16 @@
+{
+    "Luiza": {
+        "nome": "Luiza",
+        "categoria": "Destilado",
+        "volume": "300",
+        "valor": "20",
+        "qtde": "20"
+    },
+    "h20": {
+        "nome": "h20",
+        "categoria": "Refrigerante",
+        "volume": "300",
+        "valor": "20",
+        "qtde": "20"
+    }
+}
