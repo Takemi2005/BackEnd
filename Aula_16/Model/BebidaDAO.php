@@ -1,7 +1,9 @@
 <?php
 
-use Aula_16\Bebida;
-use Aula_16\Connection;
+namespace Aula_16;
+
+use PDO;
+
 require_once 'Bebida.php';
 require_once 'Connection.php';
 
