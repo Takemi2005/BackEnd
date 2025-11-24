@@ -1,13 +1,10 @@
 <?php
-
 namespace BibliotecaEscolar;
-
 use Aula_16\LivroController;
 
 require_once __DIR__. '\\..\\Controller\\LivroController.php'; // ajustado para Windows
 
 $controller = new LivroController(); // instancia o controller
-
 $livroParaEditar = null; // livro que sera editado
 $tituloOriginal = '';  // titulo original do livro
 
@@ -30,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['titulo'])) {
     $livroParaEditar = $controller->buscar($tituloOriginal);
     
     // Se o livro não for encontrado, algo deu errado, redireciona.
-    if (!$livroParaEditar) { // livro nao encontrado
+    if (!$livroParaEditar) { 
         header('Location: index.php'); // redireciona
         exit();
     }
@@ -39,9 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['titulo'])) {
     exit();
 }
 
-// Definição dos Gêneros Literários
-$generos = ["Ficção", "Romance", "Aventura", "Fantasia", "Suspense", "Terror", "Biografia", "História", "Ciência", "Poesia", "Drama", "Comédia"];
 
+$generos = ["Ficção", "Romance", "Aventura", "Fantasia", "Suspense", "Terror", "Biografia", "História", "Ciência", "Poesia", "Drama", "Comédia"];
 ?>
 
 <!DOCTYPE html>
@@ -209,10 +205,10 @@ $generos = ["Ficção", "Romance", "Aventura", "Fantasia", "Suspense", "Terror",
         .info-box strong {
             color: #1976d2;
         }
-    </style>
+     </style>
 </head>
 <body>
-    <div class="container">
+        <div class="container">
         <div class="header">
             <div class="book-icon">📖</div>
             <h1>Editar Livro</h1>
@@ -223,7 +219,7 @@ $generos = ["Ficção", "Romance", "Aventura", "Fantasia", "Suspense", "Terror",
         </div>
         
         <div class="info-box">
-            <strong>ℹ️ Observação:</strong> O título do livro não pode ser alterado, pois é usado como identificador único no sistema.
+            <strong> Observação:</strong> O título do livro não pode ser alterado, pois é usado como identificador único no sistema.
         </div>
         
         <form method="POST">
@@ -263,7 +259,7 @@ $generos = ["Ficção", "Romance", "Aventura", "Fantasia", "Suspense", "Terror",
             </div>
 
             <div class="button-group">
-                <button type="submit">💾 Salvar Alterações</button>
+                <button type="submit"> Salvar Alterações</button>
             </div>
         </form>
         

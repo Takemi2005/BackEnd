@@ -1,6 +1,5 @@
 <?php
 namespace Aula_16;
-
 use PDO;
 use PDOException;
 
@@ -10,11 +9,11 @@ class Connection {
     public static function getInstance() {
         if (!self::$instance) {
             try {
-                // Configurações do banco de dados - AJUSTE AQUI
+                
                 $host = 'localhost';
-                $dbname = 'Biblioteca_Escolar';
+                $dbname = 'biblioteca_escolar';
                 $user = 'root';
-                $pass = 'senaisp'; // Altere para sua senha do MySQL
+                $pass = '1234'; 
                 
                 // Conecta ao MySQL
                 self::$instance = new PDO(

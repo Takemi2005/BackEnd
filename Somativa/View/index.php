@@ -1,25 +1,19 @@
 <?php
-
 namespace Aula_16;
 require_once __DIR__. '\\..\\Controller\\LivroController.php';
 $controller = new LivroController();
 
-// 1. Definição dos Gêneros Literários
 $generos = [
     "Romance",
-    "Ficção Científica",
+    "Ficção",
     "Fantasia",
     "Terror",
-    "Suspense",
     "Aventura",
     "Biografia",
     "História",
     "Poesia",
-    "Drama",
     "Comédia",
     "Autoajuda",
-    "Técnico",
-    "Infantil",
     "Juvenil"
 ];
 
@@ -95,8 +89,7 @@ $genero_valor = $livro_selecionado ? $livro_selecionado->getGenero() : '';
 $quantidade_valor = $livro_selecionado ? $livro_selecionado->getQuantidade() : '';
 $titulo_antigo_input = $livro_selecionado ? '<input type="hidden" name="titulo_antigo" value="' . htmlspecialchars($livro_selecionado->getTitulo()) . '">' : '';
 $botao_texto = $livro_selecionado ? 'Salvar Edição' : 'Cadastrar';
-$botao_cor = $livro_selecionado ? '#2864bdff' : '#0ab40aff';
-
+$botao_cor = $livro_selecionado ? '#764ba2' : '#764ba2';
 ?>
 
 <!DOCTYPE html>
@@ -105,6 +98,7 @@ $botao_cor = $livro_selecionado ? '#2864bdff' : '#0ab40aff';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Livros - Biblioteca Escolar</title>
+
     <style>
         * {
             margin: 0;
@@ -145,7 +139,7 @@ $botao_cor = $livro_selecionado ? '#2864bdff' : '#0ab40aff';
         }
         
         .mensagem-sucesso {
-            background-color: #4CAF50;
+            background-color: #764ba2;
             color: white;
             padding: 15px;
             border-radius: 8px;
@@ -175,7 +169,7 @@ $botao_cor = $livro_selecionado ? '#2864bdff' : '#0ab40aff';
         }
         
         .form-area.editing {
-            border: 3px solid #1c4c96;
+            border: 3px solid #764ba2;
             box-shadow: 0 8px 32px rgba(28, 76, 150, 0.3);
         }
         
@@ -233,7 +227,7 @@ $botao_cor = $livro_selecionado ? '#2864bdff' : '#0ab40aff';
         }
         
         button[type="submit"] {
-            background-color: var(--btn-color, #005c00);
+            background-color: var(--btn-color, #764ba2);
             color: white;
         }
         
@@ -301,7 +295,7 @@ $botao_cor = $livro_selecionado ? '#2864bdff' : '#0ab40aff';
         }
         
         .btn-editar {
-            background-color: #1c4c96;
+            background-color: #764ba2;
             color: white;
             padding: 8px 16px;
             border-radius: 4px;
@@ -313,11 +307,11 @@ $botao_cor = $livro_selecionado ? '#2864bdff' : '#0ab40aff';
         }
         
         .btn-editar:hover {
-            background-color: #153a6f;
+            background-color: #764ba2;
         }
         
         .btn-excluir {
-            background-color: #d32f2f;
+            background-color: #7e03f8ff;
             color: white;
             padding: 8px 16px;
             border: none;
@@ -328,7 +322,7 @@ $botao_cor = $livro_selecionado ? '#2864bdff' : '#0ab40aff';
         }
         
         .btn-excluir:hover {
-            background-color: #b71c1c;
+            background-color: #7e03f8ff;
         }
         
         .empty-state {
@@ -359,8 +353,8 @@ $botao_cor = $livro_selecionado ? '#2864bdff' : '#0ab40aff';
 </head>
 <body>
     <div class="header">
-        <h1> echo "<img src='' alt='Minha Foto' width='300'>";Catálogo de Livros</h1>
-        <p>Biblioteca Escolar - Sistema de Gerenciamento</p>
+        <h1> <strong>📖 Catálogo de Livros da Biblioteca Escolar</strong></h1>
+        <p>Sistema de Gerenciamento</p>
     </div>
     
     <div class="container">
@@ -378,22 +372,22 @@ $botao_cor = $livro_selecionado ? '#2864bdff' : '#0ab40aff';
                 <?php echo $titulo_antigo_input; ?>
                 
                 <div class="form-group">
-                    <label>Título do Livro *</label>
+                    <label>Título do Livro:</label>
                     <input type="text" name="titulo" placeholder="Digite o título do livro" value="<?php echo htmlspecialchars($titulo_valor); ?>" required>
                 </div>
                 
                 <div class="form-group">
-                    <label>Autor *</label>
+                    <label>Autor:</label>
                     <input type="text" name="autor" placeholder="Digite o nome do autor" value="<?php echo htmlspecialchars($autor_valor); ?>" required>
                 </div>
                 
                 <div class="form-group">
-                    <label>Ano de Publicação *</label>
+                    <label>Ano de Publicação:</label>
                     <input type="number" name="ano" placeholder="Ex: 2024" min="1000" max="2100" value="<?php echo htmlspecialchars($ano_valor); ?>" required>
                 </div>
                 
                 <div class="form-group">
-                    <label>Gênero Literário *</label>
+                    <label>Gênero Literário:</label>
                     <select name="genero" required>
                         <option value="">Selecione o gênero</option>
                         <?php foreach ($generos as $gen): ?>
@@ -405,7 +399,7 @@ $botao_cor = $livro_selecionado ? '#2864bdff' : '#0ab40aff';
                 </div>
                 
                 <div class="form-group">
-                    <label>Quantidade de Exemplares *</label>
+                    <label>Quantidade de Livro:</label>
                     <input type="number" name="quantidade" placeholder="Quantidade disponível" min="0" value="<?php echo htmlspecialchars($quantidade_valor); ?>" required>
                 </div>
                 
@@ -425,7 +419,7 @@ $botao_cor = $livro_selecionado ? '#2864bdff' : '#0ab40aff';
             <h2>Livros Cadastrados</h2>
             <?php if (empty($livros)): ?>
                 <div class="empty-state">
-                    <p>📖 Nenhum livro cadastrado ainda.</p>
+                    <p>Nenhum livro cadastrado ainda.</p>
                     <p style="font-size: 0.9em;">Comece adicionando o primeiro livro ao catálogo!</p>
                 </div>
             <?php else: ?>
@@ -449,20 +443,21 @@ $botao_cor = $livro_selecionado ? '#2864bdff' : '#0ab40aff';
                         <td><?php echo htmlspecialchars($livro->getGenero()); ?></td>
                         <td><?php echo htmlspecialchars($livro->getQuantidade()); ?></td>
                         <td>
-                            <a href="?atualizar=<?php echo urlencode($livro->getTitulo()); ?>" class="btn-editar">✏️ Editar</a>
+                            <a href="?atualizar=<?php echo urlencode($livro->getTitulo()); ?>" class="btn-editar"> <strong>Editar</strong></a>
                             
-                            <form method="POST" style="display: inline;" onsubmit="return confirm('Tem certeza que deseja excluir o livro \'<?php echo htmlspecialchars($livro->getTitulo()); ?>\'?');">
-                                <input type="hidden" name="acao" value="deletar">
-                                <input type="hidden" name="titulo" value="<?php echo htmlspecialchars($livro->getTitulo()); ?>">
-                                <button type="submit" class="btn-excluir">🗑️ Excluir</button>
-                            </form>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                        <form method="POST" style="display: inline;">
+                         <input type="hidden" name="acao" value="deletar">
+                         <input type="hidden" name="titulo" value="<?php echo htmlspecialchars($livro->getTitulo()); ?>">
+                         <button type="submit" class="btn-excluir">Excluir</button>
+                        </form>
+        </td>
+        </tr>
+            <?php endforeach; ?>
+    </tbody>
+    </table>
             <?php endif; ?>
-        </div>
     </div>
+    </div>
+
 </body>
 </html>

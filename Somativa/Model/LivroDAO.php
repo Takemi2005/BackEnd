@@ -1,7 +1,5 @@
 <?php
-
 namespace Aula_16;
-
 use PDO;
 
 require_once 'Livro.php';
@@ -21,8 +19,7 @@ class LivroDAO {
                 autor VARCHAR(150) NOT NULL,
                 ano INT NOT NULL,
                 genero VARCHAR(100) NOT NULL,
-                quantidade INT NOT NULL
-            )
+                quantidade INT NOT NULL )
         ");
     }
 
